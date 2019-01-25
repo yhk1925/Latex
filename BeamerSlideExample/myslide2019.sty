@@ -1,0 +1,206 @@
+% File name : myslide2019.sty
+% Associated files: None 
+% Description: Style file for beamer slide.
+% Author: Young-Hoon Kim, PH.D. / ETRI
+% Date: Jan. 16, 2019 Wendsday
+% Version & Build: 1.0, B20190116 (2019.01.16., Ver1.0) 
+% CopyLeft 2019, All Lefts Reserved by Young-Hoon Kim
+
+%\setbeamertemplate{navigation symbols}{}
+
+%\setbeamercolor{frametitle}{fg=black,bg=white}
+%\setbeamercolor{title}{fg=black,bg=yellow!85!orange}
+%\usetheme{AnnArbor}
+%\beamersetuncovermixins{\opaqueness<1>{25}}{\opaqueness<2->{15}}
+
+%\usepackage{beamerthemesplit}
+%\usepackage[hangul]{kotex}
+
+% TIKZ 
+\usepackage{tikz}
+\usetikzlibrary{mindmap,trees,arrows,decorations.pathmorphing,shapes,fit,shadows,positioning,chains}
+\usetikzlibrary{calc,intersections}
+\usetikzlibrary{arrows,positioning,shapes}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath, amssymb}
+\usepackage{array,multirow}
+\usepackage{subfigure}  %%% subfigure는 obsolete임.
+\usepackage{color}
+ 
+%\usepackage{subfig}
+\usepackage{listings} % Source Coding 
+\usepackage{url}
+
+% =============================================================================
+% Beamer Themes
+% Warsaw, Berkeley, Boadilla, CambridgeUS, Copenhagen
+% http://www.math.umbc.edu/~rouben/beamer/quickstart-Z-H-30.html#node_sec_30
+% =============================================================================
+%\usetheme{CambridgeUS}
+%\usetheme{umbc3}
+%\usetheme{umbc4}
+%\usetheme{Warsaw}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen} % I do not like it. 
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid} % Best one that I like
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+
+%\useinnertheme{rectangles}
+%\useinnertheme{circle}
+\useinnertheme{rounded}
+%\usecolortheme{albatross}
+%\usecolortheme{Beetle}
+%\usecolortheme{crane}
+%\usecolortheme{Beetle}
+%\usepackage{beamerthemeshadow}
+
+%\definecolor{uofsgreen}{rgb}{.125,.5,.25}
+
+%\usecolortheme[named=uofsgreen]{structure}
+%
+%\setbeamercolor{normal text}{fg=white,bg=black}
+
+%\setbeamercolor{frametitle}{fg=red,bg=uofsgreen}
+
+%\setbeamertemplate{background}{\includegraphics[width=\paperwidth]{Figures/background_5.jpg}}
+
+% User defined References
+\newcommand{\fig}[1]{그림 ~\ref{#1}}
+\newcommand{\eq}[1]{수식~(\ref{#1})}
+\newcommand{\uchap}[1]{\ref{#1}~장}
+\newcommand{\tbl}[1]{표 ~\ref{#1}}
+
+%----------------- Environments-----------------
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+%
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\beqa}{\begin{eqnarray}}
+\newcommand{\eeqa}{\end{eqnarray}}
+%
+%----------------- Math Operators --------------------------------------------------
+\newcommand{\dyx}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dx}[1]{\partial #1}
+\newcommand{\argmin}[2]{\mathop{\mathrm{argmin}}\limits_{#1} \{#2\}}
+\newcommand{\mymax}[1]{\mathop{\mathrm{max}} \{#1\}}
+\newcommand{\mymin}[1]{\mathop{\mathrm{min}} \{#1\}}
+\newcommand{\abs}[1]{|#1|}
+\newcommand{\urng}[3]{#1,#2,\ldots,#3}
+\newcommand{\udef}{\stackrel{\triangle}{=}}
+\newcommand{\conj}[1]{#1^*}
+\newcommand{\expt}[1]{E\{#1\}}
+\newcommand{\expth}[1]{\hat{E}\{#1\}}
+\newcommand{\mdet}{\mathop{\mathrm{det}}}
+\newcommand{\trace}{\mathop{\mathrm{trace}}}
+\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
+
+%----------------- References & Notations ------------------------------------------------
+\newcommand{\bhat}[1]{\hat{\bf #1}}
+\newcommand{\thm}[1]{Theorem~\ref{#1}}
+\newcommand{\umath}[1]{$ #1 $}
+\newcommand{\vt}[1]{\mathbf{#1}}
+\newcommand{\vc}[2]{[#1_1,#1_2,\ldots,#1_#2]^T}
+\newcommand{\RR}[1]{\Re \biggl [ #1 \biggr]}  % IR ( real number set } uses \! for negative space
+\newcommand{\CC}[1]{\Im \biggl [ #1 \biggr]}  % IC ( complex number set }
+
+%----------------- Color --------------------------------------------------
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\xdefinecolor{myGreenYellow}   {cmyk}{0.15,0,0.69,0}
+\xdefinecolor{myYellow}        {cmyk}{0,0,1,0}
+\xdefinecolor{myGoldenrod}     {cmyk}{0,0.10,0.84,0}
+\xdefinecolor{myDandelion}     {cmyk}{0,0.29,0.84,0}
+\xdefinecolor{myApricot}       {cmyk}{0,0.32,0.52,0}
+\xdefinecolor{myPeach}         {cmyk}{0,0.50,0.70,0}
+\xdefinecolor{myMelon}         {cmyk}{0,0.46,0.50,0}
+\xdefinecolor{myYellowOrange}  {cmyk}{0,0.42,1,0}
+\xdefinecolor{myOrange}        {cmyk}{0,0.61,0.87,0}
+\xdefinecolor{myBurntOrange}   {cmyk}{0,0.51,1,0}
+\xdefinecolor{myBittersweet}   {cmyk}{0,0.75,1,0.24}
+\xdefinecolor{myRedOrange}     {cmyk}{0,0.77,0.87,0}
+\xdefinecolor{myMahogany}      {cmyk}{0,0.85,0.87,0.35}
+\xdefinecolor{myMaroon}        {cmyk}{0,0.87,0.68,0.32}
+\xdefinecolor{myBrickRed}      {cmyk}{0,0.89,0.94,0.28}
+\xdefinecolor{myRed}           {cmyk}{0,1,1,0}
+\xdefinecolor{myOrangeRed}     {cmyk}{0,1,0.50,0}
+\xdefinecolor{myRubineRed}     {cmyk}{0,1,0.13,0}
+\xdefinecolor{myWildStrawberry}{cmyk}{0,0.96,0.39,0}
+\xdefinecolor{mySalmon}        {cmyk}{0,0.53,0.38,0}
+\xdefinecolor{myCarnationPink} {cmyk}{0,0.63,0,0}
+\xdefinecolor{myMagenta}       {cmyk}{0,1,0,0}
+\xdefinecolor{myVioletRed}     {cmyk}{0,0.81,0,0}
+\xdefinecolor{myRhodamine}     {cmyk}{0,0.82,0,0}
+\xdefinecolor{myMulberry}      {cmyk}{0.34,0.90,0,0.02}
+\xdefinecolor{myRedViolet}     {cmyk}{0.07,0.90,0,0.34}
+\xdefinecolor{myFuchsia}       {cmyk}{0.47,0.91,0,0.08}
+\xdefinecolor{myLavender}      {cmyk}{0,0.48,0,0}
+\xdefinecolor{myThistle}       {cmyk}{0.12,0.59,0,0}
+\xdefinecolor{myOrchid}        {cmyk}{0.32,0.64,0,0}
+\xdefinecolor{myDarkOrchid}    {cmyk}{0.40,0.80,0.20,0}
+\xdefinecolor{myPurple}        {cmyk}{0.45,0.86,0,0}
+\xdefinecolor{myPlum}          {cmyk}{0.50,1,0,0}
+\xdefinecolor{myViolet}        {cmyk}{0.79,0.88,0,0}
+\xdefinecolor{myRoyalPurple}   {cmyk}{0.75,0.90,0,0}
+\xdefinecolor{myBlueViolet}    {cmyk}{0.86,0.91,0,0.04}
+\xdefinecolor{myPeriwinkle}    {cmyk}{0.57,0.55,0,0}
+\xdefinecolor{myCadetBlue}     {cmyk}{0.62,0.57,0.23,0}
+\xdefinecolor{myCornflowerBlue}{cmyk}{0.65,0.13,0,0}
+\xdefinecolor{myMidnightBlue}  {cmyk}{0.98,0.13,0,0.43}
+\xdefinecolor{myNavyBlue}      {cmyk}{0.94,0.54,0,0}
+\xdefinecolor{myRoyalBlue}     {cmyk}{1,0.50,0,0}
+\xdefinecolor{myBlue}          {cmyk}{1,1,0,0}
+\xdefinecolor{myCerulean}      {cmyk}{0.94,0.11,0,0}
+\xdefinecolor{myCyan}          {cmyk}{1,0,0,0}
+\xdefinecolor{myProcessBlue}   {cmyk}{0.96,0,0,0}
+\xdefinecolor{mySkyBlue}       {cmyk}{0.62,0,0.12,0}
+\xdefinecolor{myTurquoise}     {cmyk}{0.85,0,0.20,0}
+\xdefinecolor{myTealBlue}      {cmyk}{0.86,0,0.34,0.02}
+\xdefinecolor{myAquamarine}    {cmyk}{0.82,0,0.30,0}
+\xdefinecolor{myBlueGreen}     {cmyk}{0.85,0,0.33,0}
+\xdefinecolor{myEmerald}       {cmyk}{1,0,0.50,0}
+\xdefinecolor{myJungleGreen}   {cmyk}{0.99,0,0.52,0}
+\xdefinecolor{mySeaGreen}      {cmyk}{0.69,0,0.50,0}
+\xdefinecolor{myGreen}         {cmyk}{1,0,1,0}
+\xdefinecolor{myForestGreen}   {cmyk}{0.91,0,0.88,0.12}
+\xdefinecolor{myPineGreen}     {cmyk}{0.92,0,0.59,0.25}
+\xdefinecolor{myLimeGreen}     {cmyk}{0.50,0,1,0}
+\xdefinecolor{myYellowGreen}   {cmyk}{0.44,0,0.74,0}
+\xdefinecolor{mySpringGreen}   {cmyk}{0.26,0,0.76,0}
+\xdefinecolor{myOliveGreen}    {cmyk}{0.64,0,0.95,0.40}
+\xdefinecolor{myRawSienna}     {cmyk}{0,0.72,1,0.45}
+\xdefinecolor{mySepia}         {cmyk}{0,0.83,1,0.70}
+\xdefinecolor{myBrown}         {cmyk}{0,0.81,1,0.60}
+\xdefinecolor{myTan}           {cmyk}{0.14,0.42,0.56,0}
+\xdefinecolor{myGray}          {cmyk}{0,0,0,0.50}
+\xdefinecolor{myBlack}         {cmyk}{0,0,0,1}
+\xdefinecolor{myWhite}         {cmyk}{0,0,0,0}
