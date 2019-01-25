@@ -1,0 +1,86 @@
+% File name : mynote2019.sty
+% Associated files: None 
+% Description: Style file for simple note.
+% Author: Young-Hoon Kim, PH.D. / ETRI
+% Date: Jan. 25, 2019
+% Version & Build: 1.2, B20190125  
+% CopyLeft 2009-2019, All Lefts Reserved by Young-Hoon Kim
+
+\usepackage{ifpdf}
+\ifpdf
+ \usepackage{graphicx}
+ \usepackage[svgnames]{xcolor}
+\else
+ \usepackage[dvipdfmx]{graphicx}
+ \usepackage[dvipdfmx,svgnames]{xcolor}
+\fi
+
+\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=2.5cm,a4paper]{geometry} % Set Paper size and margins.
+%\usepackage[scale=0.8,twoside,bindingoffset=5mm,a4paper]{geometry} % Set Paper size and margins.
+
+%\usepackage[onehalfspacing]{setspace} % Always. Other options: singlespacing, doublespacing
+\usepackage{setspace} % About spacing!!
+\usepackage{amsmath, amssymb}
+\usepackage{array,multirow}
+\usepackage{verbatim}
+%\usepackage{subfigure}  %%% subfigure´Â obsoleteÀÓ.
+\usepackage{subfig}
+\usepackage{url}
+\usepackage{fancybox,longtable}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{lastpage}
+
+\newcommand{\HRule}{\rule{\linewidth}{1mm}}
+\newcommand{\mytitle}[3]{
+{\hfill \centering \Large \bf Research Notes: #1 \hfill} 
+%{\color{blue} \HRule}
+\vspace{1cm} \\
+Date: #2 \\
+Noted by #3  \\
+{\color{blue} \HRule}
+
+}
+
+% Define the Markers
+\newcommand{\mka}{$\rightsquigarrow$} % Just for fun.
+\newcommand{\mkb}{$\Rightarrow$} % Just for fun.
+\newcommand{\mkc}{$\clubsuit$} % Just for fun.
+\newcommand{\mkd}{$\maltese$} % Just for fun.
+\newcommand{\mke}{$\S$} % Just for fun.
+\newcommand{\mkf}{$\divideontimes$} % Just for fun.
+
+% Define the font family here.
+\newcommand{\myfont}[1]{\rmfamily\SetAdhocFonts{#1}{.}} % Just for fun.
+\newcommand{\secinterval}{\vskip 0.2in}
+\newcommand{\sectiontitle}[1]{\parindent 0.0in %
+            \secinterval \parbox{3in}{\bf \large \color{red} #1}}
+
+%\newcommand{\ud1}[1]{\parindent 0.0in%
+%       \vskip 0.1in%
+%       \parbox[t]{1em}{\bBox} \parbox[t]{6.2in}{#1}}
+
+% Define the commands for note!!
+\newcommand{\ud}[1]{\parindent 0.0in%
+       \vskip 1em%
+       \parbox[t]{1em}{$\blacksquare$} \parbox[t]{43em}{#1}}
+
+\newcommand{\udd}[1]{\parindent 3ex%
+       \vskip 1em%
+       \parbox[t]{1em}{$\blacktriangleright$} \parbox[t]{41em}{#1}}
+
+\newcommand{\uddd}[1]{\parindent 6ex%
+       \vskip 1em%
+       \parbox[t]{1em}{$\checkmark$} \parbox[t]{40em}{#1}}
+
+% Define my color
+\xdefinecolor{myOliveGreen}    {cmyk}{0.54,0,0.85,0.10}
+\xdefinecolor{myGoldenrod}     {cmyk}{0,0.10,0.84,0}
+\xdefinecolor{myYellowOrange}  {cmyk}{0,0.42,1,0}
+\xdefinecolor{myGreenYellow}   {cmyk}{0.15,0,0.69,0}
+
+% Define the highlight color marker. 
+\newcommand{\hla}[1]{\colorbox{myYellowOrange}{#1}}
+\newcommand{\hlb}[1]{\colorbox{myGreenYellow}{#1}}
+\newcommand{\hlc}[1]{\colorbox{myGoldenrod}{#1}}
+\newcommand{\hld}[1]{\colorbox{myOliveGreen}{#1}}
